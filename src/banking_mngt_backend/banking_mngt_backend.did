@@ -1,0 +1,19 @@
+type Account = record {
+    id: nat64;
+    owner: text;
+    balance: float64;
+};
+
+type Transaction = record {
+    from_account: nat64;
+    to_account: nat64;
+    amount: float64;
+    timestamp: nat64;
+};
+
+service : {
+    create_account: (owner: text) -> (nat64);
+    process_transaction: (from_account: nat64, to_account: nat64, amount: float64) -> (result: variant { Ok; Err: text });
+    get_account_with_history: (account_id: nat64) -> (opt record { Account; vec Transaction });
+    calculate_interest: (account_id: nat64, rate: float64) -> (result: variant { Ok; Err: text });
+}

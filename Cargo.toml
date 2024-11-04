@@ -1,0 +1,5 @@
+[workspace]
+members = [
+    "src/banking_mngt_backend"
+]
+resolver = "2"

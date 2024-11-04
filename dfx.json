@@ -1,0 +1,27 @@
+{
+  "canisters": {
+    "banking_mngt_backend": {
+      "candid": "src/banking_mngt_backend/banking_mngt_backend.did",
+      "package": "banking_mngt_backend",
+      "type": "rust"
+    },
+    "banking_mngt_frontend": {
+      "dependencies": [
+        "banking_mngt_backend"
+      ],
+      "source": [
+        "src/banking_mngt_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "banking_mngt_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
